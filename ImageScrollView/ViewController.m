@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
 
 @end
 
@@ -16,8 +17,17 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+
+  CGSize imageViewSize = self.contentImageView.frame.size;
+  imageViewSize.width *= 1.5;
+  imageViewSize.height *= 1.5;
+
+  self.scrollView.contentSize = imageViewSize;
+  
+
 }
+
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
